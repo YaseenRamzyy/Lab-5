@@ -17,7 +17,7 @@ public class HomeScreen extends JFrame {
 
     public HomeScreen() {
 
-        setTitle("Login Screen");
+        setTitle("Home Screen");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(Home);
         pack();
@@ -41,7 +41,8 @@ public class HomeScreen extends JFrame {
         updateStudentDetailsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new UpdateStudent().setVisible(true);
+                HomeScreen.this.dispose();
             }
         });
 
