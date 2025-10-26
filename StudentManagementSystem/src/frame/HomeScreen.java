@@ -4,18 +4,25 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HomeScreen {
+public class HomeScreen extends JFrame {
     private JPanel Home;
-    private JButton addNewStudentButton;
+    private JButton addANewStudentButton;
     private JButton displayAllRegisteredStudentsButton;
     private JButton updateStudentDetailsButton;
     private JButton deleteStudentRecordButton;
     private JButton searchForAStudentButton;
     private JLabel studentManagementSystemLabel;
+    private JButton backButton;
 
 
     public HomeScreen() {
-        addNewStudentButton.addActionListener(new ActionListener() {
+
+        setTitle("Login Screen");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setContentPane(Home);
+        pack();
+        setLocationRelativeTo(null);
+        addANewStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -53,8 +60,17 @@ public class HomeScreen {
 
             }
         });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // return to the login screen
+            }
+        });
+
+        setVisible(true);
     }
-
-
-
+    public static void main (String[]args){
+        HomeScreen home = new HomeScreen();
+    }
 }
