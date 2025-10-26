@@ -58,7 +58,13 @@ public class HomeScreen extends JFrame {
         searchForAStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame searchFrame = new JFrame("Search Students");
+                Search searchPanel = new Search();
+                searchFrame.setContentPane(searchPanel.getMainPanel());
+                searchFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                searchFrame.pack();
+                searchFrame.setLocationRelativeTo(null);
+                searchFrame.setVisible(true);
             }
         });
 
