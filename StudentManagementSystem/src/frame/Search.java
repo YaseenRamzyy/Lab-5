@@ -12,7 +12,6 @@ public class Search {
     private JTextField textField1;
     private JButton searchButton;
     private JPanel searchPanel;
-    JPanel mainPanel;
 
 
     private StudentManager manager;
@@ -20,9 +19,9 @@ public class Search {
     public Search() {
         manager= new StudentManager("Students.txt");
         searchButton.addActionListener(new ActionListener() {
-            String keyword = textField1.getText().trim();    // kda 5dna mn el textbox
             @Override
             public void actionPerformed(ActionEvent e) {
+                String keyword = textField1.getText().trim();    // kda 5dna mn el textbox
                 if (keyword.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please enter a name or ID to search.");
                     return;
@@ -47,8 +46,7 @@ public class Search {
 
     // Needed to show in a JFrame (if you're using IntelliJ GUI designer)
     public JPanel getMainPanel() {
-
-        return mainPanel;
+        return searchPanel;
     }
 
     // For standalone testing:
