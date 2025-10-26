@@ -1,6 +1,8 @@
 package frame;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class HomeScreen {
     private JPanel Home;
@@ -11,7 +13,48 @@ public class HomeScreen {
     private JButton searchForAStudentButton;
     private JLabel studentManagementSystemLabel;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+
+    public HomeScreen() {
+        addNewStudentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+        displayAllRegisteredStudentsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+        updateStudentDetailsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+        deleteStudentRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+        searchForAStudentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
+
+
+
 }
