@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class HomeScreen {
     private JPanel Home;
-    private JButton addNewStudentButton;
+    private JButton addANewStudentButton;
     private JButton displayAllRegisteredStudentsButton;
     private JButton updateStudentDetailsButton;
     private JButton deleteStudentRecordButton;
@@ -15,7 +15,7 @@ public class HomeScreen {
 
 
     public HomeScreen() {
-        addNewStudentButton.addActionListener(new ActionListener() {
+        addANewStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
