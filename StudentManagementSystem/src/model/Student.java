@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Student extends Person {  // Student inherits from Person
     private String gender;
