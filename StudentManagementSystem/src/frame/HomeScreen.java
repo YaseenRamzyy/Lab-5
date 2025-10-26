@@ -17,7 +17,7 @@ public class HomeScreen extends JFrame {
 
     public HomeScreen() {
 
-        setTitle("Login Screen");
+        setTitle("Home Screen");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(Home);
         pack();
