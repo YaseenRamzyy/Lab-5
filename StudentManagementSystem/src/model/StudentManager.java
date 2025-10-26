@@ -56,6 +56,21 @@ public class StudentManager {
             e.printStackTrace();
         }
     }
+    public boolean addStudent(int id , String name , int age , String gender , String department , double gpa){
+        Student newStudent = new Student(id,name,age,gender,department,gpa);
+        if (!students.contains(newStudent)){
+            students.add(newStudent);
+            saveToFile();
+            return true;
+        }
+
+        // gives an error if the student already exists
+        else {
+            System.out.println("Student already exist!");
+            return false;
+
+        }
+    }
 
     public List<Student> searchStudent(String keyword){ //hyrg3 list bs b bel 7agat el el mwgoda fel object el eta5d mn el Student
         List<Student> result=new ArrayList<>();
