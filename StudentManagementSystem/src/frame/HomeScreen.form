@@ -1,61 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="frame.HomeScreen">
-  <grid id="27dc6" binding="Home" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="Home" layout-manager="GridLayoutManager" row-count="7" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="557" height="398"/>
+      <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="1ff33" class="javax.swing.JLabel" binding="studentManagementSystemLabel" custom-create="true">
+      <component id="15299" class="javax.swing.JLabel" binding="studentManagementSystemLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="182" height="131"/>
-          </grid>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Student Management System"/>
         </properties>
       </component>
-      <component id="5b4ff" class="javax.swing.JButton" binding="addNewStudentButton" default-binding="true">
+      <vspacer id="245e8">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="4" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="29286" class="javax.swing.JButton" binding="displayAllRegisteredStudentsButton">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Add new Student"/>
+          <text value="Display All Registered Students"/>
         </properties>
       </component>
-      <component id="ba43a" class="javax.swing.JButton" binding="displayAllRegisteredStudentsButton" default-binding="true">
+      <component id="5d764" class="javax.swing.JButton" binding="updateStudentDetailsButton">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Display all registered students"/>
+          <text value="Update Student Details"/>
         </properties>
       </component>
-      <component id="4ca5b" class="javax.swing.JButton" binding="updateStudentDetailsButton" default-binding="true">
+      <component id="200cd" class="javax.swing.JButton" binding="deleteStudentRecordButton">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Update student details"/>
+          <text value="Delete Student Record"/>
         </properties>
       </component>
-      <component id="ad421" class="javax.swing.JButton" binding="deleteStudentRecordButton" default-binding="true">
+      <component id="3f74d" class="javax.swing.JButton" binding="addANewStudentButton">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Delete student record"/>
+          <text value="Add A New Student"/>
         </properties>
       </component>
-      <component id="b129c" class="javax.swing.JButton" binding="searchForAStudentButton" default-binding="true">
+      <component id="8ca86" class="javax.swing.JButton" binding="searchForAStudentButton">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Search for a student by ID or name"/>
+          <text value="Search For Student by ID or Name"/>
+        </properties>
+      </component>
+      <hspacer id="94f73">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="4a03b">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="6ea87" class="javax.swing.JButton" binding="backButton">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Back"/>
         </properties>
       </component>
     </children>
