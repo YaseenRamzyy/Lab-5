@@ -53,6 +53,18 @@ public class StudentManager {
         }
     }
 
+    public List<Student> searchStudent(String keyword){ //hyrg3 list bs b bel 7agat el el mwgoda fel object el eta5d mn el Student
+        List<Student> result=new ArrayList<>();
+        keyword=keyword.toLowerCase().trim();
+        for(Student s:students){                 // check by name or by id
+            if(s.getName().toLowerCase().contains(keyword)||String.valueOf(s.getId()).equals(keyword)){
+                             // 5od balak mn 7etet el string.valueof dy
+                result.add(s);
+            }
+        }
+        return result;
+    }
+
 }
 
 
