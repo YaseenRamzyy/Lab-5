@@ -27,6 +27,8 @@ public class UpdateStudent extends JFrame {
     private JButton clearButton;
     private JPanel updatePanel;
 
+    StudentManager std = new StudentManager("Students.txt");
+
     public UpdateStudent() {
         setTitle("Login Screen");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,13 +36,18 @@ public class UpdateStudent extends JFrame {
         pack();
         setLocationRelativeTo(null);
 
-       /* searchButton.addActionListener(new ActionListener() {
+        genderComboBox.addItem("Select Gender");
+        genderComboBox.addItem("Male");
+        genderComboBox.addItem("Female");
+        genderComboBox.setSelectedIndex(0);
+
+        searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id = Integer.parseInt(idTextField.getText().trim());
                 boolean found = false;
 
-                for (Student s : StudentManager.studentList) {
+                for (Student s : std.getStudents()) {
                         if (s.getId() == id) {
                         fullNameTextField.setText(s.getName());
                         ageTextField.setText(String.valueOf(s.getAge()));
@@ -52,13 +59,13 @@ public class UpdateStudent extends JFrame {
                     }
                 }
                  if (!found) {
-                    JOptionPane.showMessageDialog(this, "Student not found!", "Search", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(UpdateStudent.this, "Student not found!", "Search", JOptionPane.WARNING_MESSAGE);
                     }
 
             }
-        });*/
+        });
 
-        /*updateButton.addActionListener(new ActionListener() {
+        updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id = Integer.parseInt(idTextField.getText().trim());
@@ -70,7 +77,7 @@ public class UpdateStudent extends JFrame {
 
                 boolean updated = false;
 
-                for (Student s : StudentData.studentList) {
+                for (Student s : std.getStudents()) {
                     if (s.getId() == id) {
                         s.setName(name);
                         s.setAge(age);
@@ -83,14 +90,13 @@ public class UpdateStudent extends JFrame {
                 }
 
                 if (updated) {
-                    JOptionPane.showMessageDialog(this, "Student updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    // Optionally, refresh the table or save to file
+                    JOptionPane.showMessageDialog(UpdateStudent.this, "Student updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    std.saveToFile();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Student ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(UpdateStudent.this, "Student ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
-        });*/
-
+        });
         setVisible(true);
     }
 

@@ -12,8 +12,12 @@ public class StudentManager {
         loadFromFile();
     }
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
     //file handling
-    private void saveToFile(){
+    public void saveToFile(){
         try (BufferedWriter bw =new BufferedWriter(new FileWriter(fileName))) {
             for ( Student s:students){
                 bw.write(s.toCSV());
@@ -64,6 +68,7 @@ public class StudentManager {
         }
         return result;
     }
+
 
 }
 
