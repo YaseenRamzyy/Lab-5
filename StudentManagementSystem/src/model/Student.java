@@ -5,9 +5,8 @@ public class Student extends Person {  // Student inherits from Person
     private String department;
     private double gpa;
 
-    public Student(int age, String name,int id, String gender, String department, double gpa) {
-        super(name,id,age);
-
+    public Student(int id, String name, int age, String gender, String department, double gpa) {
+        super(name, id, age);
         this.gender = gender;
         this.department = department;
         this.gpa = gpa;

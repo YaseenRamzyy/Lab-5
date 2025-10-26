@@ -7,7 +7,7 @@ public class StudentManager {
     private List<Student>students=new ArrayList<>();
     private String fileName;
 
-    StudentManager(String fileName){
+    public StudentManager(String fileName){
         this.fileName = fileName;
         loadFromFile();
     }
