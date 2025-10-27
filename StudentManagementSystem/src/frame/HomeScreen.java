@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.StudentManager;
+
 public class HomeScreen extends JFrame {
     private JPanel Home;
     private JButton addANewStudentButton;
@@ -13,9 +15,14 @@ public class HomeScreen extends JFrame {
     private JButton searchForAStudentButton;
     private JLabel studentManagementSystemLabel;
     private JButton backButton;
+    private StudentManager studentManager;
+
 
 
     public HomeScreen() {
+
+        // Initialize the StudentManager
+        studentManager = new StudentManager("Students.txt");
 
         setTitle("Home Screen");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -25,7 +32,7 @@ public class HomeScreen extends JFrame {
         addANewStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new AddStudent(studentManager).setVisible(true);
             }
         });
 
