@@ -3,7 +3,12 @@ package model;
 public class Validations {
     public static boolean idValidation(String id){
         int idd = Integer.parseInt(id.trim());
-        if(idd <= 0){
+        if(id.trim().isEmpty()){
+            return false;
+        }
+        else if(idd <= 0){
+            return false;
+        }else if(!id.matches("^[0-9]+$")){
             return false;
         }
         return true;
@@ -12,7 +17,7 @@ public class Validations {
     public static boolean nameValidation(String name){
         if(name.trim().isEmpty()){
             return false;
-        }else if(! name.matches("[a-zA-Z]+")){
+        }else if(! name.matches("[a-zA-Z ]+")){
             return false;
         }
         return true;
@@ -23,6 +28,8 @@ public class Validations {
         if(age.trim().isEmpty()){
             return false;
         }else if(agee <= 15 || agee > 100){
+            return false;
+        }else if(!age.matches("^[0-9]+$")){
             return false;
         }
         return true;

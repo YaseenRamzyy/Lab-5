@@ -1,5 +1,7 @@
 package frame;
 
+import model.UserManager;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +15,7 @@ public class LoginScreen extends JFrame {
     private JLabel usernameLabel;
     private JPanel loginPanel;
 
-
+    UserManager user = new UserManager("Users.txt");
 
     public LoginScreen(){
         setTitle("Login Screen");
@@ -34,15 +36,19 @@ public class LoginScreen extends JFrame {
                 } else if (!username.matches("[a-zA-Z0-9_]+")) {
                     JOptionPane.showMessageDialog(LoginScreen.this,"Username can contain letters, numbers and underscores only!","Invalid Username",JOptionPane.ERROR_MESSAGE);
                     return;
-                } else if (username.equals("admin") && password.equals("1234")) {
-                    JOptionPane.showMessageDialog(LoginScreen.this,"Login Successfully","Welcome",JOptionPane.INFORMATION_MESSAGE);
+                } else if (user.validateLogin(username,password)) {
+                    JOptionPane.showMessageDialog(LoginScreen.this,"Login Successfully!","Welcome",JOptionPane.INFORMATION_MESSAGE);
                     new HomeScreen().setVisible(true);
                     LoginScreen.this.dispose();
                 } else if (password.length() < 4) {
-                    JOptionPane.showMessageDialog(LoginScreen.this,"Password must be at least 4 characters","Error",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(LoginScreen.this,"Password must be at least 4 characters!","Error",JOptionPane.ERROR_MESSAGE);
+                    return;
+
+                } else if (username.length() < 4) {
+                    JOptionPane.showMessageDialog(LoginScreen.this,"Username must be at least 4 characters!","Error",JOptionPane.ERROR_MESSAGE);
                     return;
                 } else if (!password.matches(".*\\d.*")) {
-                    JOptionPane.showMessageDialog(LoginScreen.this, "Password must contain at least one number.", "Invalid Password", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(LoginScreen.this, "Password must contain at least one digit!", "Invalid Password", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 else {
@@ -51,8 +57,6 @@ public class LoginScreen extends JFrame {
                 }
             }
         });
-
-
         setVisible(true);
         buttonQuit.addActionListener(e -> System.exit(0));
     }

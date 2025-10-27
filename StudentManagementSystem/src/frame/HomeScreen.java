@@ -83,6 +83,13 @@ public class HomeScreen extends JFrame {
         });
 
         setVisible(true);
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new LoginScreen().setVisible(true);
+                HomeScreen.this.dispose();
+            }
+        });
     }
     public static void main (String[]args){
         HomeScreen home = new HomeScreen();

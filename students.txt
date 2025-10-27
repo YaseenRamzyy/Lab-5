@@ -2,3 +2,5 @@
 2,Sara,21,Female,Electrical,3.8
 3,Ali,21,Male,Mecha,4.0
 9323,mazen,21,male,compu,3.3
+66,HossamElNerwegy,25,Female,Electro,3.0
+88,Maro,20,male,Computer & Communications,3.5
