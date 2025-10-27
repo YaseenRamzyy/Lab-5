@@ -41,7 +41,8 @@ public class HomeScreen extends JFrame {
         updateStudentDetailsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new UpdateStudent().setVisible(true);
+                HomeScreen.this.dispose();
             }
         });
 

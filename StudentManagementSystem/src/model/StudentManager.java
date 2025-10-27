@@ -84,6 +84,28 @@ public class StudentManager {
         return result;
     }
 
+    public Student findStudentById(int id) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public boolean updateStudent(int id,String name,int age,String gender,String department,double gpa){
+        Student s = findStudentById(id);
+        if(s != null){
+            s.setName(name);
+            s.setAge(age);
+            s.setGender(gender);
+            s.setDepartment(department);
+            s.setGpa(gpa);
+            saveToFile();
+            return true;
+        }
+        return false;
+    }
 
 }
 
