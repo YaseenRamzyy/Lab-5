@@ -1,2 +1,1 @@
-2,Sara Mohamed,21,Female,Engineering,3.8
 3,Omar Hassan,19,Male,Business,3.2

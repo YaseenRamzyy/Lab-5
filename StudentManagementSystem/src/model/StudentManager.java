@@ -106,7 +106,21 @@ public class StudentManager {
         }
         return false;
     }
-
+    public List<Student> getAllStudents() {
+        return new ArrayList<>(students);
+    }
+    public boolean deleteStudent(int id) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
+            if (s.getId() == id) {
+                iterator.remove();
+                saveToFile();
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
