@@ -3,7 +3,7 @@ package model;
 import java.io.*;
 import java.util.*;
 
-public class StudentManager {
+public class StudentManager implements FileHandler {
     private List<Student>students=new ArrayList<>();
     private String fileName;
 
@@ -17,6 +17,7 @@ public class StudentManager {
     }
 
     //file handling
+    @Override
     public void saveToFile(){
         try (BufferedWriter bw =new BufferedWriter(new FileWriter(fileName))) {
             for ( Student s:students){
@@ -29,7 +30,8 @@ public class StudentManager {
         }
     }
 
-    private  void loadFromFile(){
+    @Override
+    public void loadFromFile(){
         File file =new File(fileName);
         if(!file.exists()){
             return;    // get out
