@@ -11,6 +11,9 @@ public class StudentManager {
         this.fileName = fileName;
         loadFromFile();
     }
+    public List<Student> getAllStudents() {
+        return new ArrayList<>(students);
+    }
 
     //file handling
     private void saveToFile(){
@@ -52,6 +55,19 @@ public class StudentManager {
             e.printStackTrace();
         }
     }
+    public boolean deleteStudent(int id) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
+            if (s.getId() == id) {
+                iterator.remove();
+                saveToFile();
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
 
