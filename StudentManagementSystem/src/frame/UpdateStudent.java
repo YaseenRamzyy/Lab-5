@@ -119,6 +119,15 @@ public class UpdateStudent extends JFrame {
                 }
             }
         });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new HomeScreen().setVisible(true);
+                UpdateStudent.this.dispose();
+            }
+        });
+
         // 3l4an tzhar
         setVisible(true);
     }
