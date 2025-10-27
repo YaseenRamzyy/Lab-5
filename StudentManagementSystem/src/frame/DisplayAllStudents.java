@@ -5,6 +5,7 @@ import model.StudentManager;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -55,6 +56,9 @@ public class DisplayAllStudents extends JFrame {
         studentTable.getColumnModel().getColumn(3).setPreferredWidth(80);
         studentTable.getColumnModel().getColumn(4).setPreferredWidth(120);
         studentTable.getColumnModel().getColumn(5).setPreferredWidth(60);
+        // Enable sorting on the table
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tableModel);
+        studentTable.setRowSorter(sorter);
     }
 
     private void loadStudents() {

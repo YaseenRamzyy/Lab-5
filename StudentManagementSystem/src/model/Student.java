@@ -1,4 +1,5 @@
 package model;
+import java.util.Objects;
 
 public class Student extends Person {  // Student inherits from Person
     private String gender;
