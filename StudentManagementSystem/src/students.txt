@@ -1,3 +1,0 @@
-1,Ahmed Ali,20,Male,Computer Science,3.5
-2,Sara Mohamed,21,Female,Engineering,3.8
-3,Omar Hassan,19,Male,Business,3.2

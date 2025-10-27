@@ -1,1 +1,4 @@
-3,Omar Hassan,19,Male,Business,3.2
+1,Mazen,26,Male,Computer,3.9
+2,Sara,21,Female,Electrical,3.8
+3,Ali,21,Male,Mecha,4.0
+9323,mazen,21,male,compu,3.3
