@@ -11,12 +11,13 @@ public class StudentManager {
         this.fileName = fileName;
         loadFromFile();
     }
-    public List<Student> getAllStudents() {
-        return new ArrayList<>(students);
+
+    public List<Student> getStudents() {
+        return students;
     }
 
     //file handling
-    private void saveToFile(){
+    public void saveToFile(){
         try (BufferedWriter bw =new BufferedWriter(new FileWriter(fileName))) {
             for ( Student s:students){
                 bw.write(s.toCSV());
@@ -55,19 +56,56 @@ public class StudentManager {
             e.printStackTrace();
         }
     }
-    public boolean deleteStudent(int id) {
-        Iterator<Student> iterator = students.iterator();
-        while (iterator.hasNext()) {
-            Student s = iterator.next();
-            if (s.getId() == id) {
-                iterator.remove();
-                saveToFile();
-                return true;
+    public boolean addStudent(int id , String name , int age , String gender , String department , double gpa){
+        Student newStudent = new Student(id,name,age,gender,department,gpa);
+        if (!students.contains(newStudent)){
+            students.add(newStudent);
+            saveToFile();
+            return true;
+        }
+
+        // gives an error if the student already exists
+        else {
+            System.out.println("Student already exist!");
+            return false;
+
+        }
+    }
+
+    public List<Student> searchStudent(String keyword){ //hyrg3 list bs b bel 7agat el el mwgoda fel object el eta5d mn el Student
+        List<Student> result=new ArrayList<>();
+        keyword=keyword.toLowerCase().trim();
+        for(Student s:students){                 // check by name or by id
+            if(s.getName().toLowerCase().contains(keyword)||String.valueOf(s.getId()).equals(keyword)){
+                             // 5od balak mn 7etet el string.valueof dy
+                result.add(s);
             }
+        }
+        return result;
+    }
+
+    public Student findStudentById(int id) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public boolean updateStudent(int id,String name,int age,String gender,String department,double gpa){
+        Student s = findStudentById(id);
+        if(s != null){
+            s.setName(name);
+            s.setAge(age);
+            s.setGender(gender);
+            s.setDepartment(department);
+            s.setGpa(gpa);
+            saveToFile();
+            return true;
         }
         return false;
     }
-
 
 }
 
