@@ -57,7 +57,7 @@ public class HomeScreen extends JFrame {
         deleteStudentRecordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new Delete(studentManager).setVisible(true);
             }
         });
 
